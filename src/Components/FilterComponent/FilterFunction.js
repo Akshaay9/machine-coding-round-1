@@ -24,6 +24,11 @@ export const filterFunction = (products, filter) => {
     );
     // console.log(newPro);
   }
+  if (filter.rating !== null) {
+    mutatedProductList = mutatedProductList.filter(
+      (ele) => ele.rating > filter.rating
+    );
+  }
 
   return mutatedProductList;
 };

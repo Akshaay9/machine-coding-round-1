@@ -57,7 +57,9 @@ function FilterComponent() {
           />
         </div>
       ))}
-      <h4 className="heading">SIzes</h4>
+      <h4 className="heading">Sizes</h4>
+
+      {/* sizes */}
 
       <div className="prodTags">
         <label htmlFor="">Small</label>
@@ -100,7 +102,52 @@ function FilterComponent() {
         />
       </div>
 
-      <button>Clear Filter</button>
+      {/* ratings */}
+      <h4 className="heading">Rating</h4>
+      <div className="prodTags">
+        <label htmlFor="">4 start and above</label>
+        <input
+          type="radio"
+          name="rating"
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_RATING", payload: 4 })
+          }
+        />
+      </div>
+      <div className="prodTags">
+        <label htmlFor="">3 start and above</label>
+        <input
+          type="radio"
+          name="rating"
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_RATING", payload: 3 })
+          }
+        />
+      </div>
+      <div className="prodTags">
+        <label htmlFor="">2 start and above</label>
+        <input
+          type="radio"
+          name="rating"
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_RATING", payload: 2 })
+          }
+        />
+      </div>
+      <div className="prodTags">
+        <label htmlFor="">1 start and above</label>
+        <input
+          type="radio"
+          name="rating"
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_RATING", payload: 1 })
+          }
+        />
+      </div>
+
+      <button onClick={() => HomeProductDispatch({ type: "CLEAR_FILTER" })}>
+        Clear Filter
+      </button>
     </div>
   );
 }

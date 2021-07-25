@@ -66,6 +66,25 @@ export const productReducer = (state, { type, payload }) => {
             : [...state.filters.Sizes, payload],
         },
       };
+    case "ADD_RATING":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          rating: Number(payload),
+        },
+      };
+    case "CLEAR_FILTER":
+      return {
+        ...state,
+        filters: {
+          sort: "POPULARITY",
+          rating: null,
+          PriceRange: null,
+          productsTags: [],
+          Sizes: [],
+        },
+      };
     default:
       return state;
   }
