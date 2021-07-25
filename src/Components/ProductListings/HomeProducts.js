@@ -1,6 +1,7 @@
 import React from "react";
 import { useCartListingContext } from "../../Context/CartListingContext/CartListingContext";
 import { useHomeProductListingContext } from "../../Context/ProductListingContext/ProductListingContext";
+import { useWishListReducer } from "../../Context/WishListContext/WishListContext";
 import "./HomeProduct.css";
 
 function HomeProducts() {
@@ -13,10 +14,14 @@ function HomeProducts() {
     cartDispatch,
   } = useCartListingContext();
 
+  const {
+    state: { wishListItems },
+    wishListDispatch,
+  } = useWishListReducer();
+
+  // Cart Functionality
   const isProductAlredyInCart = (item) => {
     let isProductInCart = cartItems.some((ele) => ele.id === item.id);
-    console.log(isProductInCart);
-    console.log(cartItems);
     if (!isProductInCart) {
       return (
         <button
@@ -52,9 +57,34 @@ function HomeProducts() {
     }
   };
 
+  // wishlist FUnctionality
+  const isProductAlredyWished = (item) => {
+    const isProductWished = wishListItems.some((ele) => ele.id === item.id);
+    if (!isProductWished) {
+      return (
+        <i
+          class="far fa-heart"
+          onClick={() =>
+            wishListDispatch({ type: "ADD_TO_WISHLIST", payload: item })
+          }
+        ></i>
+      );
+    } else {
+      return (
+        <i
+          class="fas fa-heart red"
+          onClick={() =>
+            wishListDispatch({ type: "REMOVE_FROM_WISHLIST", payload: item.id })
+          }
+        ></i>
+      );
+    }
+  };
+
   return (
     <div>
       <h3> Products</h3>
+      
       <div className="product-grid">
         {products.map((ele) => (
           <div className="product-container">
@@ -65,7 +95,7 @@ function HomeProducts() {
             </div>
             <div className="product-container-CTA">
               {isProductAlredyInCart(ele)}
-              <i class="far fa-heart"></i>
+              {isProductAlredyWished(ele)}
             </div>
           </div>
         ))}

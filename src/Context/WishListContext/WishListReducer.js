@@ -11,11 +11,11 @@ export const wishListReducer = (state, { type, payload }) => {
       };
 
     case "REMOVE_FROM_WISHLIST":
+      console.log(type);
+      console.log(payload);
       return {
         ...state,
-        wishListReducer: state.wishListItems.filter(
-          (ele) => ele.id !== payload
-        ),
+        wishListItems: state.wishListItems.filter((ele) => ele.id !== payload),
       };
     default:
       break;
