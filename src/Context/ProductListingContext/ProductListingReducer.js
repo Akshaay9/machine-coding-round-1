@@ -1,4 +1,4 @@
-import { ProductList } from "../../Data/ProductData";
+import ProductList from "../../Data/ProductData.json";
 
 export const inititalState = {
   products: ProductList,

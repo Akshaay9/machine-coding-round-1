@@ -13,7 +13,7 @@ function HomeProducts() {
     HomeProductDispatch,
   } = useHomeProductListingContext();
 
-  console.log(filters.ideal);
+  console.log(JSON.stringify(products));
 
   return (
     <div>

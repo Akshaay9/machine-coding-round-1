@@ -24,11 +24,15 @@ export const filterFunction = (products, filter) => {
     );
     // console.log(newPro);
   }
-  if (filter.ideal.length > 0) {
+  if (filter.ideal.length > 0 && filter.ideal.length <= 1) {
     mutatedProductList = mutatedProductList.filter((ele) =>
       ele.idealFor.every((ide) => filter.ideal.includes(ide))
     );
     // console.log(newPro);
+  } else if (filter.ideal.length > 1) {
+    mutatedProductList = mutatedProductList.filter(
+      (ele) => ele.idealFor.includes("men") && ele.idealFor.includes("women")
+    );
   }
 
   return mutatedProductList;
