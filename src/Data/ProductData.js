@@ -29,7 +29,7 @@ export const ProductList = [
     id: 2,
     name: "ESSENTIAL Black T-SHIRT",
     tag: "t-shirt",
-    price: 250,
+    price: 1150,
     color: "Light Black",
     category: "MensNewDrop",
     size: ["s", "m", "l"],
@@ -55,7 +55,7 @@ export const ProductList = [
     id: 3,
     name: "ESSENTIAL White Oversized T-SHIRT",
     tag: "t-shirt",
-    price: 350,
+    price: 850,
     color: "White",
     category: "MensNewDrop",
     size: ["s", "m", "l", "xl"],
@@ -137,7 +137,7 @@ export const ProductList = [
     price: 500,
     color: "Red",
     category: "MensNewDrop",
-    size: [ "x", "l"],
+    size: ["x", "l"],
     images: [
       {
         img: "https://cdn.shopify.com/s/files/1/1367/5207/products/APOLLOMUSCLEFITSST-SHIRTSPORTSRED.A-Edit_AS_885x.jpg?v=1613989635",
@@ -164,7 +164,7 @@ export const ProductList = [
     price: 700,
     color: "Light Sky Blue",
     category: "MensNewDrop",
-    size: ["m","xl"],
+    size: ["m", "xl"],
     images: [
       {
         img: "https://cdn.shopify.com/s/files/1/1367/5207/products/CHALKDROPARMTANKSPRINGafGREENPRINT.A-Edit_ZH_885x.jpg?v=1607946413",
@@ -190,7 +190,7 @@ export const ProductList = [
     price: 790,
     color: "Navy Black",
     category: "MensNewDrop",
-    size: [ "l"],
+    size: ["l"],
     images: [
       {
         img: "https://cdn.shopify.com/s/files/1/1367/5207/products/CRESTSWEATZIPUPHOODIEBLACK.A-Edit_ZH_885x.jpg?v=1600271914",

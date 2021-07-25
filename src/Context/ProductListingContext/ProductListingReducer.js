@@ -37,6 +37,24 @@ export const productReducer = (state, { type, payload }) => {
           sort: "POPULARITY",
         },
       };
+    case "PRICE_SORT":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          PriceRange: Number(payload),
+        },
+      };
+    case "ADD_TAG":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          productsTags: state.filters.productsTags.includes(payload)
+            ? state.filters.productsTags.filter((ele) => ele !== payload)
+            : [...state.filters.productsTags, payload],
+        },
+      };
     default:
       return state;
   }

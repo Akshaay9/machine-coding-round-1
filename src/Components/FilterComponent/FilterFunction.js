@@ -7,5 +7,10 @@ export const filterFunction = (products, filter) => {
   if (filter.sort === "HIGH_TO_LOW") {
     mutatedProductList.sort((b, a) => a.price - b.price);
   }
+  if (filter.PriceRange !== null) {
+    mutatedProductList = mutatedProductList.filter(
+      (ele) => ele.price <= filter.PriceRange
+    );
+  }
   return mutatedProductList;
 };
