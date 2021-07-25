@@ -75,6 +75,14 @@ export const productReducer = (state, { type, payload }) => {
             : [...state.filters.ideal, payload],
         },
       };
+    case "BOTH_MEN_WOMEN":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          ideal: ["men", "women"],
+        },
+      };
     case "CLEAR_FILTER":
       return {
         ...state,

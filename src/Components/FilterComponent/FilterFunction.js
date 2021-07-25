@@ -26,9 +26,8 @@ export const filterFunction = (products, filter) => {
   }
   if (filter.ideal.length > 0) {
     mutatedProductList = mutatedProductList.filter((ele) =>
-      ele.idealFor.some((ide) => filter.ideal.includes(ide))
+      ele.idealFor.every((ide) => filter.ideal.includes(ide))
     );
-    // console.log(newPro);
   }
 
   return mutatedProductList;
