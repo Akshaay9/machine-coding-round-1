@@ -25,3 +25,16 @@
   margin-left: 0.3rem;
   margin-right: 0.3rem;
 }
+.filter-bar button {
+  /* border: 1px solid red; */
+  display: block;
+  margin: 0.6rem auto !important;
+  padding: 0.3rem 1.3rem;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  border: none;
+  outline: none !important;
+  margin: none !important;
+}

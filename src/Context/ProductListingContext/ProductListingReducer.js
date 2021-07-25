@@ -80,7 +80,7 @@ export const productReducer = (state, { type, payload }) => {
         ...state,
         filters: {
           sort: "POPULARITY",
-          ideal: null,
+          ideal: [],
           PriceRange: null,
           productsTags: [],
           Sizes: [],
