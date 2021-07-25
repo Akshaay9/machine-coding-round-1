@@ -12,5 +12,10 @@ export const filterFunction = (products, filter) => {
       (ele) => ele.price <= filter.PriceRange
     );
   }
+  if (filter.productsTags.length > 0) {
+    mutatedProductList = mutatedProductList.filter((ele) =>
+      filter.productsTags.includes(ele.tag)
+    );
+  }
   return mutatedProductList;
 };

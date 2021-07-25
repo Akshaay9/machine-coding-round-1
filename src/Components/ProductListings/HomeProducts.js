@@ -10,7 +10,7 @@ function HomeProducts() {
     state: {
       products,
       filters,
-      filters: { sort, PriceRange },
+      filters: { sort, PriceRange, productsTags },
     },
     HomeProductDispatch,
   } = useHomeProductListingContext();
@@ -87,7 +87,7 @@ function HomeProducts() {
     }
   };
 
-  console.log(PriceRange);
+  console.log(productsTags);
 
   return (
     <div>

@@ -51,10 +51,26 @@ function FilterComponent() {
           <input
             type="checkbox"
             checked={filters.productsTags.includes(ele)}
-            onClick={() => HomeProductDispatch({type:"ADD_TAG",payload:ele})}
+            onClick={() =>
+              HomeProductDispatch({ type: "ADD_TAG", payload: ele })
+            }
           />
         </div>
       ))}
+      <h4 className="heading">SIzes</h4>
+
+      <div className="prodTags">
+        <label htmlFor="">Small</label>
+        <input type="radio" />
+
+        <label htmlFor="">medium</label>
+        <input type="radio" />
+        <label htmlFor="">large</label>
+        <input type="radio" />
+        <label htmlFor="">XL</label>
+        <input type="radio" />
+      </div>
+      <button>Clear Filter</button>
     </div>
   );
 }
