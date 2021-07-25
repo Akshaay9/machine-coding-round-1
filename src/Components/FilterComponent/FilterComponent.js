@@ -44,7 +44,7 @@ function FilterComponent() {
           HomeProductDispatch({ type: "PRICE_SORT", payload: e.target.value })
         }
       />
-      <h4 className="heading">Products</h4>
+      <h4 className="heading">Brands</h4>
       {allTheProductTags(products).map((ele) => (
         <div className="prodTags">
           <label>{ele}</label>
@@ -103,44 +103,26 @@ function FilterComponent() {
       </div>
 
       {/* ratings */}
-      <h4 className="heading">Rating</h4>
+      <h4 className="heading">IdealFor</h4>
       <div className="prodTags">
-        <label htmlFor="">4 start and above</label>
+        <label htmlFor="">Men</label>
         <input
-          type="radio"
+          type="checkbox"
           name="rating"
+          checked={filters.ideal.includes("men")}
           onClick={() =>
-            HomeProductDispatch({ type: "ADD_RATING", payload: 4 })
+            HomeProductDispatch({ type: "ADD_IDEAL", payload: "men" })
           }
         />
       </div>
       <div className="prodTags">
-        <label htmlFor="">3 start and above</label>
+        <label htmlFor="">women</label>
         <input
-          type="radio"
+          type="checkbox"
           name="rating"
+          checked={filters.ideal.includes("women")}
           onClick={() =>
-            HomeProductDispatch({ type: "ADD_RATING", payload: 3 })
-          }
-        />
-      </div>
-      <div className="prodTags">
-        <label htmlFor="">2 start and above</label>
-        <input
-          type="radio"
-          name="rating"
-          onClick={() =>
-            HomeProductDispatch({ type: "ADD_RATING", payload: 2 })
-          }
-        />
-      </div>
-      <div className="prodTags">
-        <label htmlFor="">1 start and above</label>
-        <input
-          type="radio"
-          name="rating"
-          onClick={() =>
-            HomeProductDispatch({ type: "ADD_RATING", payload: 1 })
+            HomeProductDispatch({ type: "ADD_IDEAL", payload: "women" })
           }
         />
       </div>

@@ -4,7 +4,7 @@ export const inititalState = {
   products: ProductList,
   filters: {
     sort: "POPULARITY",
-    rating: null,
+    ideal: [],
     PriceRange: null,
     productsTags: [],
     Sizes: [],
@@ -56,7 +56,6 @@ export const productReducer = (state, { type, payload }) => {
         },
       };
     case "ADD_SIZE":
-      console.log(type, payload);
       return {
         ...state,
         filters: {
@@ -66,12 +65,14 @@ export const productReducer = (state, { type, payload }) => {
             : [...state.filters.Sizes, payload],
         },
       };
-    case "ADD_RATING":
+    case "ADD_IDEAL":
       return {
         ...state,
         filters: {
           ...state.filters,
-          rating: Number(payload),
+          ideal: state.filters.ideal.includes(payload)
+            ? state.filters.ideal.filter((ele) => ele !== payload)
+            : [...state.filters.ideal, payload],
         },
       };
     case "CLEAR_FILTER":
@@ -79,7 +80,7 @@ export const productReducer = (state, { type, payload }) => {
         ...state,
         filters: {
           sort: "POPULARITY",
-          rating: null,
+          ideal: null,
           PriceRange: null,
           productsTags: [],
           Sizes: [],

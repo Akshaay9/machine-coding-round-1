@@ -24,10 +24,11 @@ export const filterFunction = (products, filter) => {
     );
     // console.log(newPro);
   }
-  if (filter.rating !== null) {
-    mutatedProductList = mutatedProductList.filter(
-      (ele) => ele.rating > filter.rating
+  if (filter.ideal.length > 0) {
+    mutatedProductList = mutatedProductList.filter((ele) =>
+      ele.idealFor.some((ide) => filter.ideal.includes(ide))
     );
+    // console.log(newPro);
   }
 
   return mutatedProductList;

@@ -3,17 +3,11 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HomeProductListingFun } from "./Context/ProductListingContext/ProductListingContext";
-import { CartListingFUn } from "./Context/CartListingContext/CartListingContext";
-import { WishListFun } from "./Context/WishListContext/WishListContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <HomeProductListingFun>
-      <CartListingFUn>
-        <WishListFun>
-          <App />
-        </WishListFun>
-      </CartListingFUn>
+      <App />
     </HomeProductListingFun>
   </React.StrictMode>,
   document.getElementById("root")

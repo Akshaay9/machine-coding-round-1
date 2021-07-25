@@ -22,15 +22,20 @@
 .product-container-CTA {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0rem 1rem;
+}
+.product-container-CTA p {
+  padding-left: 0.3rem;
+}
+.sizes {
+  display: flex;
+  align-items: center;
 }
 .red {
   color: red;
 }
 .productsHeading {
   margin-left: 16.5rem;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 .filter-sort {
   display: flex;
