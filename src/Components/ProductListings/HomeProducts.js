@@ -2,11 +2,17 @@ import React from "react";
 import { useCartListingContext } from "../../Context/CartListingContext/CartListingContext";
 import { useHomeProductListingContext } from "../../Context/ProductListingContext/ProductListingContext";
 import { useWishListReducer } from "../../Context/WishListContext/WishListContext";
+import { filterFunction } from "../FilterComponent/FilterFunction";
 import "./HomeProduct.css";
 
 function HomeProducts() {
   const {
-    state: { products },
+    state: {
+      products,
+      filters,
+      filters: { sort },
+    },
+    HomeProductDispatch,
   } = useHomeProductListingContext();
 
   const {
@@ -84,9 +90,29 @@ function HomeProducts() {
   return (
     <div>
       <h3> Products</h3>
-      
+      <div className="filter-sort">
+        <h4>Sort By :</h4>
+        <h4
+          className={`${sort === "POPULARITY" && "underline"}`}
+          onClick={() => HomeProductDispatch({ type: "POPULARITY" })}
+        >
+          Popularity
+        </h4>
+        <h4
+          className={`${sort === "LOW_TO_HIGH" && "underline"}`}
+          onClick={() => HomeProductDispatch({ type: "LOW_TO_HIGH" })}
+        >
+          Price-Low to High
+        </h4>
+        <h4
+          className={`${sort === "HIGH_TO_LOW" && "underline"}`}
+          onClick={() => HomeProductDispatch({ type: "HIGH_TO_LOW" })}
+        >
+          Price-High to Low
+        </h4>
+      </div>
       <div className="product-grid">
-        {products.map((ele) => (
+        {filterFunction(products, filters).map((ele) => (
           <div className="product-container">
             <img src={ele.images[0].img} alt="" />
             <div className="product-desc">

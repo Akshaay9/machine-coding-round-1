@@ -25,3 +25,20 @@
 .red {
   color: red;
 }
+.filter-sort {
+  display: flex;
+  /* border: 1px solid red; */
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+}
+.filter-sort > h4 {
+  color: rgb(138, 133, 133);
+}
+
+.underline {
+  border-bottom: 2px solid blue;
+}

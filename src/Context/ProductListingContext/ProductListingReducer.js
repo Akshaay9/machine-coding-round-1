@@ -3,7 +3,7 @@ import { ProductList } from "../../Data/ProductData";
 export const inititalState = {
   products: ProductList,
   filters: {
-    sort: "",
+    sort: "POPULARITY",
     rating: null,
     PriceRange: null,
     productsTags: [],
@@ -19,6 +19,22 @@ export const productReducer = (state, { type, payload }) => {
         filters: {
           ...state.filters,
           sort: "LOW_TO_HIGH",
+        },
+      };
+    case "HIGH_TO_LOW":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          sort: "HIGH_TO_LOW",
+        },
+      };
+    case "POPULARITY":
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          sort: "POPULARITY",
         },
       };
     default:

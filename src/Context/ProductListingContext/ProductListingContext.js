@@ -7,7 +7,7 @@ export const HomeProductListingFun = ({ children }) => {
   const [state, dispatch] = useReducer(productReducer, inititalState);
   return (
     <HomeProductListingContext.Provider
-      value={{ state, HomePorductDispatch: dispatch }}
+      value={{ state, HomeProductDispatch: dispatch }}
     >
       {children}
     </HomeProductListingContext.Provider>
