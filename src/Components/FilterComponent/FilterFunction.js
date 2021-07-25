@@ -17,5 +17,13 @@ export const filterFunction = (products, filter) => {
       filter.productsTags.includes(ele.tag)
     );
   }
+
+  if (filter.Sizes.length > 0) {
+    mutatedProductList = mutatedProductList.filter((ele) =>
+      ele.size.some((siz) => filter.Sizes.includes(siz))
+    );
+    // console.log(newPro);
+  }
+
   return mutatedProductList;
 };

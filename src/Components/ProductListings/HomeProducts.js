@@ -10,7 +10,7 @@ function HomeProducts() {
     state: {
       products,
       filters,
-      filters: { sort, PriceRange, productsTags },
+      filters: { sort, PriceRange, productsTags, Sizes },
     },
     HomeProductDispatch,
   } = useHomeProductListingContext();
@@ -86,8 +86,6 @@ function HomeProducts() {
       );
     }
   };
-
-  console.log(productsTags);
 
   return (
     <div>

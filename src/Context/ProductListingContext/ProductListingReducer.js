@@ -55,6 +55,17 @@ export const productReducer = (state, { type, payload }) => {
             : [...state.filters.productsTags, payload],
         },
       };
+    case "ADD_SIZE":
+      console.log(type, payload);
+      return {
+        ...state,
+        filters: {
+          ...state.filters,
+          Sizes: state.filters.Sizes.includes(payload)
+            ? state.filters.Sizes.filter((ele) => ele !== payload)
+            : [...state.filters.Sizes, payload],
+        },
+      };
     default:
       return state;
   }

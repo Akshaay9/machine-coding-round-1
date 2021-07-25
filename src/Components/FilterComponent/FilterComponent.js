@@ -61,15 +61,45 @@ function FilterComponent() {
 
       <div className="prodTags">
         <label htmlFor="">Small</label>
-        <input type="radio" />
-
-        <label htmlFor="">medium</label>
-        <input type="radio" />
-        <label htmlFor="">large</label>
-        <input type="radio" />
-        <label htmlFor="">XL</label>
-        <input type="radio" />
+        <input
+          type="checkbox"
+          checked={filters.Sizes.includes("s")}
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_SIZE", payload: "s" })
+          }
+        />
       </div>
+      <div className="prodTags">
+        <label htmlFor="">medium</label>
+        <input
+          type="checkbox"
+          checked={filters.Sizes.includes("m")}
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_SIZE", payload: "m" })
+          }
+        />
+      </div>
+      <div className="prodTags">
+        <label htmlFor="">large</label>
+        <input
+          type="checkbox"
+          checked={filters.Sizes.includes("l")}
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_SIZE", payload: "l" })
+          }
+        />
+      </div>
+      <div className="prodTags">
+        <label htmlFor="">Extra Large</label>
+        <input
+          type="checkbox"
+          checked={filters.Sizes.includes("xl")}
+          onClick={() =>
+            HomeProductDispatch({ type: "ADD_SIZE", payload: "xl" })
+          }
+        />
+      </div>
+
       <button>Clear Filter</button>
     </div>
   );
