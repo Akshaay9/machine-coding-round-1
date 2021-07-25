@@ -1,10 +1,13 @@
 import "./App.css";
-import { useState } from "react";
+import HomeScreen from "./Screens/HomeScreen/Index";
+import NavBar from "./Screens/HomeScreen/NavBar";
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hey</h1>
+    <div>
+      <NavBar/>
+      <HomeScreen />
     </div>
   );
 }
